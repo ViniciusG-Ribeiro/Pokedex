@@ -1,4 +1,4 @@
-# pokedex
+# Pokedex
 
 # ideias
 
