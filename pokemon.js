@@ -1,4 +1,13 @@
+//Busca dentro do html a tag "section"
 var section = document.querySelector('section');
+
+// document.querySelector('input').addEventListener('keypress', function (e) {
+//     if (e.key === 'Enter') {
+//         exibe();
+//     }
+// });
+
+//Função que é chamada quando o botão(busca o pokemon) é pressionado
 
 function exibe() {
     var pokemon = document.querySelector('input').value
@@ -34,6 +43,7 @@ function API(url) {
                 myDiv.setAttribute('class', 'card');
                 myDiv.setAttribute('style', 'margin: 10px; padding-left: 0px;');
 
+                myH2.setAttribute('style', 'text-align: center;');
                 myH2.textContent = pokemon[0].name;
                 pokemon = request.response['sprites']
                 myImg.setAttribute('src', pokemon.front_default)
