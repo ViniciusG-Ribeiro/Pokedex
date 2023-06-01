@@ -12,8 +12,8 @@
     </header>
     <nav class="navbar sticky-top navbar-dark" style="background-color: #b60b0b;">
         <a class="navbar-brand" style="color: white;">Pokedex</a>
-        <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar"
+        <form class="form-inline" onsubmit="return false">
+            <input id="txtBusca" class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar"
                 style="width: 230px">
             <input type="button" class="btn btn-outline-success" value="Pesquisar" onclick="exibe()">
         </form>
@@ -38,7 +38,7 @@
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <script>
-        $("input").on('keyup', function (e) {
+        $("#txtBusca").on('keyup', function (e) {
             if (e.key === 'Enter' || e.keyCode === 13) {
                 exibe();
             }
