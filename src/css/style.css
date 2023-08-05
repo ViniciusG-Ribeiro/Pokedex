@@ -142,7 +142,7 @@ main{
 .informacoes{
     margin: 5px 10px 0px 10px;
     overflow-y: scroll;
-    max-height: 130px;
+    height: 130px;
     border: 1px solid black;
     border-radius: 5px;
     background-color: white;
