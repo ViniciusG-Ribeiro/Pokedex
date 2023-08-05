@@ -5,12 +5,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokedex</title>
+    <link rel="shortcut icon" href="src/imgs/favcon.png" type="image/x-icon">
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="src/css/reset.css">
+    <link rel="stylesheet" href="src/css/scrollbar.css">
 </head>
 
 <body>
     <header>
+        <picture>
+            <img class="logo" src="src/imgs/logo-pokemon.png" alt="logo pokemon">
+        </picture>
     </header>
-    <nav class="navbar sticky-top navbar-dark" style="background-color: #b60b0b;">
+
+    <main>
+        <div class="pokedex">
+            <picture>
+                <img src="src/imgs/ViniDex.png" alt="">
+            </picture>
+            <!-- 1000 x 755 -->
+            <div class="container-consulta">
+                <div class="consulta">
+                    <p>N° #</p>
+                    <input class="input-codigo" type="number" name="codigo" value="0">
+                </div>
+            </div>
+
+            <div class="container-painel">
+                <div class="painel">
+                    <h2 class="nome-pokemon">Nome pokemon</h2>
+                    <picture class="pokemon">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/4.gif" alt="charmander" class="gif">
+                    </picture>
+                </div>
+                <div class="container-tipo">
+                    <p class="tipo-pokemon">
+                        <img  src="src/imgs/favcon.png" alt="">
+                    </p>
+                    <p class="tipo-pokemon"> 
+                        <img  src="src/imgs/favcon.png" alt="">
+                    </p>
+                </div>
+            </div>
+            <div class="container-inf-status">
+                <nav>
+                    <input class="botao" type="button" value="Information">
+                    <input class="botao" type="button" value="Status">
+                </nav>
+                <div class="descricao">
+                    <div class="informacoes">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum placeat    atque consequuntur asperiores similique numquam ducimus porro excepturi    corporis voluptatibus distinctio voluptatum illum fugiat impedit, quaerat  magni et. Quae, ex!
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, possimus illum. Aspernatur culpa blanditiis itaque consequatur voluptatibus nesciunt tempore incidunt cupiditate, alias, perferendis, a dolores debitis similique inventore eligendi esse.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero consequatur inventore necessitatibus fuga nostrum optio quae soluta quis quas ducimus dolores, accusantium eaque vero in eligendi numquam atque quibusdam fugit?
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus quis ab deserunt fugit quisquam, omnis est dolores velit odit distinctio natus saepe. Dignissimos illum aliquid dolores nobis possimus culpa reprehenderit.
+                    </div>
+                    <!-- <div class="status">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint,  consequuntur modi, voluptate pariatur laborum rem animi sed nesciunt     laboriosam maiores alias quae eveniet ipsum, placeat repellendus non sit    quos ullam?
+                    </div> -->
+                </div>
+            </div>
+            
+
+        </div>
+        
+    </main>
+    
+</body>
+
+</html>
+
+
+
+
+<!-- <nav class="navbar sticky-top navbar-dark" style="background-color: #b60b0b;">
         <a class="navbar-brand" style="color: white;">Pokedex</a>
         <form class="form-inline" onsubmit="return false">
             <input id="txtBusca" class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar"
@@ -43,7 +110,4 @@
                 exibe();
             }
         });  
-    </script>
-</body>
-
-</html>
+    </script> -->
