@@ -18,8 +18,8 @@ header{
 main{
     display: flex;
     justify-content: center;
-    /* background-color: blueviolet;
-} */
+    /* background-color: blueviolet;*/
+} 
 
 .pokedex{
     width: 1000px;
