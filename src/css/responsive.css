@@ -1,0 +1,10 @@
+@media(max-width:999px){
+    .logo{
+        width: 232px;
+    }
+
+    .pokedex{
+        width: 551px;
+        background-image: url(../imgs/ViniDex-mobile2.png);
+    }
+}

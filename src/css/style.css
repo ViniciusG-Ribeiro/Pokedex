@@ -6,7 +6,6 @@ body{
 header{
     display: flex;
     justify-content: center;
-    /* background-color: red; */
     margin-bottom: 5px;
 }
 
@@ -18,13 +17,14 @@ header{
 main{
     display: flex;
     justify-content: center;
-    /* background-color: blueviolet;*/
 } 
 
 .pokedex{
     width: 1000px;
     height: 755px;
-    /* background-color: brown; */
+    background-image: url(../imgs/ViniDex.png);
+    position: relative;
+    display: flex;
 }
 
 .pokedex img{
@@ -32,13 +32,22 @@ main{
     height: 100%;
 }
 
+.container-esquerda-pokedex{
+    /* background-color: rgba(0, 255, 255, 0.185); */
+    width: 551px;
+    height: 655px;
+    padding-top: 100px;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
 .container-consulta{
-    position: absolute;
-    z-index: 1;
-    top: 280px;
     width: 110px;
     height: 35px;
-    margin-left: 325px;
+    margin-left: 325px ;  /* 325px */
+    /* margin-top: 100px; */
     background-color: #5e5a5a;
     border: 1px solid black;
     border-radius: 10px;
@@ -52,7 +61,6 @@ main{
     height: 100%;
     font-weight: bold;
     color: white;
-    /* background-color: cornflowerblue;  */
 }
 
 .input-codigo{
@@ -63,19 +71,16 @@ main{
 }
 
 .container-painel{
-    position: absolute;
-    z-index: 1;
-    top: 368px;
     width: 390px;
     height: 319px;
-    margin-left: 55px;
-    /* background-color: blue;  */
+    margin: 65px 55px 0;
+    /* background-color: rgba(128, 0, 128, 0.541);  */
 }
 
 .painel{
     display: flex;
     flex-direction: column;
-    /* background-color: chartreuse; */
+    /* background-color: rgba(128, 255, 0, 0.5); */
     height: 247px;
 }
 
@@ -99,7 +104,7 @@ main{
     display: flex;
     margin-top: 20px;
     justify-content: center;
-    /* background-color: cadetblue; */
+    /* background-color: rgba(95, 158, 160, 0.432); */
 }
 
 .tipo-pokemon{
@@ -112,9 +117,7 @@ main{
 
 .container-inf-status{
     background-color: rgba(94, 90, 90, 0.959);
-    position: absolute;
-    z-index: 1;
-    top: 700px; /* 700 */
+    margin-top: 10px;
     width: 451px;
     height: 185px;
     margin-left: 20px;
@@ -137,6 +140,7 @@ main{
 
 .descricao{
     height: 150px;
+    position: relative;
 }
 
 .informacoes{
