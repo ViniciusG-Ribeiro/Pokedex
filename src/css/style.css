@@ -147,7 +147,7 @@ main{
     padding: 5px 5px 5px 5px;
     text-align: justify;
 }
-/* criado separados os estilos por que provavelmente vão ter conteudos com outros estilos */
+/* criado separados os estilos por que provavelmente vão ter conteudos com outros estilos  */
 .status{
     margin: 5px 10px 0px 10px;
     overflow-y: scroll;
