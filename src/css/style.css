@@ -1,5 +1,4 @@
 body{
-    /* background-color: aqua; */
     align-items: center;
 }
 
@@ -14,8 +13,11 @@ header{
     padding: 5px;
 }
 
-main{
+.display-flex{
     display: flex;
+}
+
+main{
     justify-content: center;
 } 
 
@@ -38,7 +40,6 @@ main{
     height: 655px;
     padding-top: 100px;
     position: relative;
-    display: flex;
     flex-wrap: wrap;
     flex-direction: column;
 }
@@ -46,15 +47,13 @@ main{
 .container-consulta{
     width: 110px;
     height: 35px;
-    margin-left: 325px ;  /* 325px */
-    /* margin-top: 100px; */
+    margin-left: 325px;
     background-color: #5e5a5a;
     border: 1px solid black;
     border-radius: 10px;
 }
 
 .consulta{
-    display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
@@ -78,7 +77,6 @@ main{
 }
 
 .painel{
-    display: flex;
     flex-direction: column;
     /* background-color: rgba(128, 255, 0, 0.5); */
     height: 247px;
@@ -86,12 +84,10 @@ main{
 
 .nome-pokemon{
     margin-top: 5px;
-    display: flex;
     align-self: center;
 }
 
 .pokemon{
-    display: flex;
     align-self: center;
 }
 
@@ -101,7 +97,6 @@ main{
 }
 
 .container-tipo{
-    display: flex;
     margin-top: 20px;
     justify-content: center;
     /* background-color: rgba(95, 158, 160, 0.432); */
@@ -126,7 +121,6 @@ main{
 }
 
 .container-inf-status nav{
-    display: flex;
     justify-content: center;
 }
 
