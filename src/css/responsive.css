@@ -16,6 +16,7 @@
 
     .pokedex{
         width: 360px;
+        height: 500px;
         background: url(../imgs/ViniDex-mobile.png) no-repeat;
         background-size: contain;
     }
