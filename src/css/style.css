@@ -1,5 +1,5 @@
 body{
-    background-color: aqua;
+    /* background-color: aqua; */
     align-items: center;
 }
 
@@ -18,13 +18,13 @@ header{
 main{
     display: flex;
     justify-content: center;
-    background-color: blueviolet;
+    /* background-color: blueviolet; */
 }
 
 .pokedex{
     width: 1000px;
     height: 755px;
-    background-color: brown;
+    /* background-color: brown; */
 }
 
 .pokedex img{
