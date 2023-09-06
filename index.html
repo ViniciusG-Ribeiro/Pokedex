@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="src/css/style.css">
     <link rel="stylesheet" href="src/css/reset.css">
     <link rel="stylesheet" href="src/css/scrollbar.css">
+    <link rel="stylesheet" href="src/css/responsive.css">
 </head>
 
 <body>
@@ -18,65 +19,24 @@
         </picture>
     </header>
 
-    <main>
+    <main class="display-flex">
         <div class="pokedex">
-            <div class="row">
-                <div class="col-md-8">
-                    <picture>
-                        <img src="src/imgs/ViniDex.png" alt="">
-                    </picture>
-                    <!-- 1000 x 755 -->
-                    <div class="container-consulta">
-                        <div class="consulta">
-                            <p>N° #</p>
-                            <input class="input-codigo" type="number" name="codigo" value="0">
-                        </div>
-                    </div>
-
-                    <div class="container-painel">
-                        <div class="painel">
-                            <h2 class="nome-pokemon">Nome pokemon</h2>
-                            <picture class="pokemon">
-                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/4.gif"
-                                    alt="charmander" class="gif">
-                            </picture>
-                        </div>
-                        <div class="container-tipo">
-                            <p class="tipo-pokemon">
-                                <img src="src/imgs/favcon.png" alt="">
-                            </p>
-                            <p class="tipo-pokemon">
-                                <img src="src/imgs/favcon.png" alt="">
-                            </p>
-                        </div>
-                    </div>
-                    <div class="container-inf-status">
-                        <nav>
-                            <input class="botao" type="button" value="Information">
-                            <input class="botao" type="button" value="Status">
-                        </nav>
-                        <div class="descricao">
-                            <div class="informacoes">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum placeat atque consequuntur
-                                asperiores similique numquam ducimus porro excepturi corporis voluptatibus distinctio
-                                voluptatum illum fugiat impedit, quaerat magni et. Quae, ex!
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, possimus illum.
-                                Aspernatur
-                                culpa blanditiis itaque consequatur voluptatibus nesciunt tempore incidunt cupiditate,
-                                alias, perferendis, a dolores debitis similique inventore eligendi esse.
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero consequatur inventore
-                                necessitatibus fuga nostrum optio quae soluta quis quas ducimus dolores, accusantium
-                                eaque
-                                vero in eligendi numquam atque quibusdam fugit?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus quis ab deserunt
-                                fugit
-                                quisquam, omnis est dolores velit odit distinctio natus saepe. Dignissimos illum aliquid
-                                dolores nobis possimus culpa reprehenderit.
-                            </div>
-                        </div>
+            <!-- 1000 x 755 -->
+            <div class="container-esquerda-pokedex display-flex">
+                <div class="container-consulta">
+                    <div class="consulta display-flex">
+                        <p>N° #</p>
+                        <input class="input-codigo" type="number" name="codigo" value="0">
                     </div>
                 </div>
-            </div>
+        
+                <div class="container-painel">
+                    <div class="painel display-flex">
+                        <h2 class="nome-pokemon display-flex">Nome pokemon</h2>
+                        <picture class="pokemon display-flex">
+                           <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/4.gif" alt="charmander" class="gif">
+                        </picture>
+                    </div>
 
 
 

@@ -6,7 +6,6 @@ body{
 header{
     display: flex;
     justify-content: center;
-    /* background-color: red; */
     margin-bottom: 5px;
 }
 
@@ -15,16 +14,25 @@ header{
     padding: 5px;
 }
 
-main{
+.display-flex{
     display: flex;
+}
+
+main{
     justify-content: center;
     /* background-color: blueviolet; */
 }
 
+main{
+    justify-content: center;
+} 
+
 .pokedex{
     width: 1000px;
     height: 755px;
-    /* background-color: brown; */
+    background-image: url(../imgs/ViniDex.png);
+    position: relative;
+    display: flex;
 }
 
 .pokedex img{
@@ -32,27 +40,32 @@ main{
     height: 100%;
 }
 
+.container-esquerda-pokedex{
+    /* background-color: rgba(0, 255, 255, 0.185); */
+    width: 551px;
+    height: 655px;
+    padding-top: 100px;
+    position: relative;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
 .container-consulta{
-    position: absolute;
-    z-index: 1;
-    top: 280px;
     width: 110px;
     height: 35px;
     margin-left: 325px;
     background-color: #5e5a5a;
-    border: 1px solid black;
+    border: 1px solid rgba(0, 0, 0, 0.315);
     border-radius: 10px;
 }
 
 .consulta{
-    display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
     height: 100%;
     font-weight: bold;
     color: white;
-    /* background-color: cornflowerblue;  */
 }
 
 .input-codigo{
@@ -63,30 +76,24 @@ main{
 }
 
 .container-painel{
-    position: absolute;
-    z-index: 1;
-    top: 368px;
     width: 390px;
     height: 319px;
-    margin-left: 55px;
-    /* background-color: blue;  */
+    margin: 65px 55px 0;
+    /* background-color: rgba(128, 0, 128, 0.541);  */
 }
 
 .painel{
-    display: flex;
     flex-direction: column;
-    /* background-color: chartreuse; */
+    /* background-color: rgba(128, 255, 0, 0.5); */
     height: 247px;
 }
 
 .nome-pokemon{
     margin-top: 5px;
-    display: flex;
     align-self: center;
 }
 
 .pokemon{
-    display: flex;
     align-self: center;
 }
 
@@ -96,10 +103,9 @@ main{
 }
 
 .container-tipo{
-    display: flex;
     margin-top: 20px;
     justify-content: center;
-    /* background-color: cadetblue; */
+    /* background-color: rgba(95, 158, 160, 0.432); */
 }
 
 .tipo-pokemon{
@@ -111,19 +117,16 @@ main{
 }
 
 .container-inf-status{
-    background-color: rgba(94, 90, 90, 0.959);
-    position: absolute;
-    z-index: 1;
-    top: 700px; /* 700 */
+    background-color: rgba(100, 100, 100);
+    margin-top: 10px;
     width: 451px;
     height: 185px;
     margin-left: 20px;
-    border: 1px solid black;
+    border: 1px solid rgba(0, 0, 0, 0.315);
     border-radius: 5px;
 }
 
 .container-inf-status nav{
-    display: flex;
     justify-content: center;
 }
 
@@ -137,6 +140,7 @@ main{
 
 .descricao{
     height: 150px;
+    position: relative;
 }
 
 .informacoes{
@@ -149,7 +153,7 @@ main{
     padding: 5px 5px 5px 5px;
     text-align: justify;
 }
-/* criado separados os estilos por que provavelmente vão ter conteudos com outros estilos */
+/* criado separados os estilos por que provavelmente vão ter conteudos com outros estilos  */
 .status{
     margin: 5px 10px 0px 10px;
     overflow-y: scroll;
