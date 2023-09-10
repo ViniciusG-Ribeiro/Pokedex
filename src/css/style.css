@@ -1,5 +1,7 @@
 body{
     align-items: center;
+    background: url(../imgs/background.jpg) no-repeat center;
+    background-size: cover;
 }
 
 header{
@@ -25,8 +27,8 @@ main{
     width: 1000px;
     height: 755px;
     background-image: url(../imgs/ViniDex.png);
-    position: relative;
     display: flex;
+    flex-direction: row;
 }
 
 .pokedex img{
@@ -35,7 +37,7 @@ main{
 }
 
 .container-esquerda-pokedex{
-    /* background-color: rgba(0, 255, 255, 0.185); */
+    /* background-color: rgba(0, 255, 255, 0.671); */
     width: 551px;
     height: 655px;
     padding-top: 100px;
@@ -79,12 +81,18 @@ main{
 .painel{
     flex-direction: column;
     /* background-color: rgba(128, 255, 0, 0.5); */
+    background: url(../imgs/fundo-painel.jpg) no-repeat center;
+    background-size: cover;
     height: 247px;
 }
 
 .nome-pokemon{
     margin-top: 5px;
     align-self: center;
+    padding: 5px;
+    background-color: rgba(252, 252, 252, 0.822);
+    border: solid black 1px;
+    border-radius: 5px;
 }
 
 .pokemon{
@@ -92,7 +100,8 @@ main{
 }
 
 .pokemon img{
-    margin-top: 20px;
+    margin-top: 15px;
+    /* width: 150px; */
     width: 150px;
 }
 
@@ -132,6 +141,11 @@ main{
     border-radius: 5px;
 }
 
+.botao:hover{
+    background-color: rgb(252,12,12);
+    color: white;
+}
+
 .descricao{
     height: 150px;
     position: relative;
@@ -157,4 +171,82 @@ main{
     background-color: white;
     padding: 5px 5px 5px 5px;
     text-align: justify;
+}
+
+.container-direta-pokedex{
+    /* background-color: rgba(127, 255, 212, 0.322); */
+    width: 449px;
+    padding-top: 207px;
+    height: 532px;
+}
+
+.grid{
+    /* background-color: rgba(137, 43, 226, 0.555); */
+    overflow-y: scroll;
+    width: 357px;
+    height: 446px;
+    margin-left: 32px;
+    padding: 0.5em;
+    padding-right: 7px;
+    display: grid;
+    grid-template-areas: "frame-pokemon" "frame-pokemon" "frame-pokemon";
+    grid-template-columns: repeat(AUTO-FILL,minmax(100px,1fr));
+    grid-gap: 10px;
+}
+
+.frame-pokemon{
+    background-color: rgb(255, 255, 255);
+    padding: 5px;
+    border: 2px solid rgba(0, 0, 0);
+    border-radius: 5px;
+    /* width: 117px; */
+    height: 100px;
+    flex-direction: column;
+    text-align: center;
+    grid-area: "frame-pokemon";
+}
+
+.frame-pokemon:hover{
+    background-color: rgb(116, 114, 114);
+    /* .container-label{
+        background-color: ;
+    color: rgb(252, 0, 0);
+    } */
+}
+
+.container-pokemon{
+
+    background: rgb(252,12,12);
+    background: linear-gradient(180deg, rgba(252,12,12,1) 46%, rgba(0,0,0,1) 51%, rgba(255,255,255,1) 55%);
+    background-size: cover;
+    border: solid black 0.5px;
+    border-radius: 10%;
+    padding-bottom: 5px;
+}
+
+.pokemon-grid img{
+    width: 50px;
+    /* background-color: white; */
+}
+
+.container-label{
+    background-color: rgb(224, 210, 210);
+    border-radius: 5px;
+    border: solid black 0.5px;
+    margin: 2px 0 auto;
+    padding: 1px;
+}
+
+.nome-pokemon-grid{
+    margin: auto;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.container-label span{
+    margin-top: 0;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0;
 }
