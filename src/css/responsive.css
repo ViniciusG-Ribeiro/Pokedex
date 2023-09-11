@@ -7,6 +7,10 @@
         width: 550px;
         background-image: url(../imgs/ViniDex-mobile.png);
     }
+
+    .grid{
+        display: none;
+    }
 }
 
 @media(max-width:549px){
