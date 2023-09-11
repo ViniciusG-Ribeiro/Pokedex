@@ -7,4 +7,4 @@
 2    Tela de status para o pokémon (Ataques e Atributos);</br>
 3    Pokemon API = https://pokeapi.co/;
 
-<img src="./imgs/poked.jpg">
+<img src="./src/imgs/poked.jpg">
