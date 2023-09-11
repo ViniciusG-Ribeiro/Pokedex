@@ -1,4 +1,5 @@
 body{
+    /* background-color: aqua; */
     align-items: center;
     background: url(../imgs/background.jpg) no-repeat center;
     background-size: cover;
@@ -17,6 +18,11 @@ header{
 
 .display-flex{
     display: flex;
+}
+
+main{
+    justify-content: center;
+    /* background-color: blueviolet; */
 }
 
 main{
