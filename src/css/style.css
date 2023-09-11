@@ -218,10 +218,6 @@ main{
 .frame-pokemon:hover{
     /* background-color: rgb(116, 114, 114); */
     background-color: rgb(255, 255, 255);
-    /* .container-label{
-        background-color: ;
-    color: rgb(252, 0, 0);
-    } */
 }
 
 .container-pokemon{
