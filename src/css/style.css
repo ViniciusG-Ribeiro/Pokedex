@@ -106,7 +106,7 @@ main{
     height: 0; 
     border-top: 15px solid transparent;
     border-bottom: 15px solid transparent; 
-    border-right:10px solid black;
+    border-right:12px solid black;
     
     left: -17px;
     top: 108px;
@@ -118,7 +118,7 @@ main{
     height: 0; 
     border-top: 15px solid transparent;
     border-bottom: 15px solid transparent;
-    border-left: 10px solid black;
+    border-left: 12px solid black;
 
     right: -17px;
     top: 108px;
