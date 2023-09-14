@@ -43,11 +43,33 @@ function consultarAPIPoke() {
             
             pokemons.forEach(pokemon => {
                 const divPokemon = document.createElement('div');
-                divPokemon.classList.add('pokemon-card'); // Você pode adicionar classes CSS para estilizar as divs conforme desejar.
-                
-                const nomePokemon = document.createElement('h2');
+                divPokemon.classList.add('frame-pokemon display-flex'); // Você pode adicionar classes CSS para estilizar as divs conforme desejar.
+
+                const containerPokemon = document.createElement('div');
+                containerPokemon.classList.add('container-pokemon')
+                divPokemon.appendChild(containerPokemon);
+
+                const picturePokemon = document.createElement('picture');
+                picturePokemon.classList.add('pokemon-grid')
+                containerPokemon.appendChild(picturePokemon);
+
+                const imgPokemon = document.createElement('img');
+                imgPokemon.classList.add('gif')
+                picturePokemon.appendChild(imgPokemon);
+
+                const containerLabel = document.createElement('div');
+                containerLabel.classList.add('container-label')
+                divPokemon.appendChild(containerLabel);
+
+                const nomePokemon = document.createElement('p');
+                nomePokemon.classList.add('nome-pokemon-grid')
                 nomePokemon.textContent = pokemon.name;
-                divPokemon.appendChild(nomePokemon);
+                containerLabel.appendChild(nomePokemon);
+
+                const numeroPokemon = document.createElement('span');
+                //numeroPokemon.textContent = pokemon.name;             Colocar numero do pokemon
+                containerLabel.appendChild(numeroPokemon);
+                
 
                 // Faz uma segunda chamada à API para obter os detalhes do Pokémon
                 fetch(pokemon.url)

@@ -90,6 +90,38 @@ main{
     background: url(../imgs/fundo-painel.jpg) no-repeat center;
     background-size: cover;
     height: 247px;
+    position: relative;
+}
+
+.painel::before,
+.painel::after{
+    content: " ";
+    display: block;
+    position: absolute;
+}
+
+.painel::before{
+    /* trocar por imagem */
+    width: 0; 
+    height: 0; 
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent; 
+    border-right:10px solid black;
+    
+    left: -17px;
+    top: 108px;
+}
+
+.painel::after{
+    /* trocar por imagem */
+    width: 0; 
+    height: 0; 
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 10px solid black;
+
+    right: -17px;
+    top: 108px;
 }
 
 .nome-pokemon{
