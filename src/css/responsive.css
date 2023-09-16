@@ -62,7 +62,7 @@
         height: 163px;
     }
 
-    .painel::before{
+    .seta-esquerda{
         border-top: 10px solid transparent;
         border-bottom: 10px solid transparent; 
         border-right:10px solid black;
@@ -71,7 +71,7 @@
         top: 71.5px;
     }
     
-    .painel::after{
+    .seta-direita{
         border-top: 10px solid transparent;
         border-bottom: 10px solid transparent;
         border-left: 10px solid black;
@@ -94,7 +94,7 @@
     }
 
     .tipo-pokemon{
-        width: 18px;
+        width: 15px;
         border: 1.5px solid rgb(74,72,73);
     }
 
@@ -108,9 +108,10 @@
 
     .botao{
         font-size: 10px;
-        width: 60px;
+        width: 80px;
         height: 18px;
         border: 1px solid rgba(0, 0, 0, 0.712);
+        font-size: 10px;
     }
     .descricao{
         height: 97px;
@@ -121,11 +122,14 @@
         margin: 5px 2px 2px;
         overflow-y: scroll;
         height: 83px;
-        border: 1px solid black;
-        border-radius: 5px;
-        background-color: white;
-        padding: 5px 5px 5px 5px;
-        text-align: justify;
+        font-size: 10px;
+    }
+
+    .status{
+        margin: 5px 2px 2px;
+        overflow-y: scroll;
+        height: 83px;
+        font-size: 10px;
     }
 
     *::-webkit-scrollbar {

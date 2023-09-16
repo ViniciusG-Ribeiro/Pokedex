@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;500;700&display=swap');
+
 body{
     /* background-color: aqua; */
     align-items: center;
@@ -93,15 +95,14 @@ main{
     position: relative;
 }
 
-.painel::before,
-.painel::after{
+.setas-painel{
     content: " ";
     display: block;
     position: absolute;
+    background: none;
 }
 
-.painel::before{
-    /* trocar por imagem */
+.seta-esquerda{
     width: 0; 
     height: 0; 
     border-top: 15px solid transparent;
@@ -112,8 +113,7 @@ main{
     top: 108px;
 }
 
-.painel::after{
-    /* trocar por imagem */
+.seta-direita{
     width: 0; 
     height: 0; 
     border-top: 15px solid transparent;
@@ -173,15 +173,17 @@ main{
 
 .botao{
     margin: 5px 10px 0px 10px;
-    width: 80px;
+    width: 100px;
     height: 25px;
     border: 2px solid black;
     border-radius: 5px;
     transition: 0.5s;
+    font-family: 'Roboto Slab', serif;
+    font-size: 14px;
 }
 
 .botao:hover{
-    background-color: rgb(252,12,12);
+    background-color: rgba(245, 33, 33, 0.781);
     color: white;
 }
 
@@ -199,6 +201,8 @@ main{
     background-color: white;
     padding: 5px 5px 5px 5px;
     text-align: justify;
+    font-family: 'Roboto Slab', serif;
+    font-size: 14px;
 }
 /* criado separados os estilos por que provavelmente vão ter conteudos com outros estilos  */
 .status{
@@ -210,6 +214,9 @@ main{
     background-color: white;
     padding: 5px 5px 5px 5px;
     text-align: justify;
+    font-family: 'Roboto Slab', serif;
+    font-size: 14px;
+    display: none; /*<- Remover para aparecer o status*/
 }
 
 .container-direta-pokedex{
