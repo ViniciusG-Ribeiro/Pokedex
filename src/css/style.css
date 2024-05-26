@@ -10,11 +10,10 @@ body{
 header{
     display: flex;
     justify-content: center;
-    margin-bottom: 5px;
 }
 
 .logo{
-    width: 400px;
+    width: 380px;
     padding: 5px;
 }
 
@@ -131,6 +130,7 @@ main{
     background-color: rgba(252, 252, 252, 0.822);
     border: solid black 1px;
     border-radius: 5px;
+    text-transform: capitalize;
 }
 
 .pokemon{
@@ -140,7 +140,8 @@ main{
 .pokemon img{
     margin-top: 15px;
     /* width: 150px; */
-    width: 150px;
+    height: 150px;
+    
 }
 
 .container-tipo{
@@ -287,6 +288,7 @@ main{
     margin-bottom: 0;
     font-size: 14px;
     font-weight: bold;
+    text-transform: capitalize;
 }
 
 .container-label span{
