@@ -260,7 +260,6 @@ main{
 }
 
 .container-pokemon{
-
     background: rgb(252,12,12);
     background: linear-gradient(180deg, rgba(252,12,12,1) 46%, rgba(0,0,0,1) 51%, rgba(255,255,255,1) 55%);
     background-size: cover;
@@ -280,6 +279,7 @@ main{
     border: solid black 0.5px;
     margin: 2px 0 auto;
     padding: 1px;
+    font-size: lamp(1rem, 2.5vw, 3rem);
 }
 
 .nome-pokemon-grid{

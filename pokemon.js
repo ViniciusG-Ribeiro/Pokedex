@@ -46,7 +46,7 @@ function consultarAPIPoke() {
                 buttonPokemon.setAttribute("onclick", "exibe('" + pokemon.name + "')");
 
                 const divPokemon = document.createElement('div');
-                divPokemon.classList.add('frame-pokemon'); // Você pode adicionar classes CSS para estilizar as divs conforme desejar.
+                divPokemon.classList.add('frame-pokemon');
                 divPokemon.classList.add('display-flex');
 
                 const containerPokemon = document.createElement('div');
@@ -62,17 +62,17 @@ function consultarAPIPoke() {
                 // picturePokemon.appendChild(imgPokemon);
 
                 const containerLabel = document.createElement('div');
-                containerLabel.classList.add('container-label')
+                containerLabel.classList.add('container-label');
                 divPokemon.appendChild(containerLabel);
 
                 const nomePokemon = document.createElement('p');
-                nomePokemon.classList.add('nome-pokemon-grid')
+                nomePokemon.classList.add('nome-pokemon-grid');
                 nomePokemon.textContent = pokemon.name;
                 containerLabel.appendChild(nomePokemon);
 
                 const numeroPokemon = document.createElement('span');
-                //numeroPokemon.textContent = pokemon.name; Colocar numero do pokemon
-                containerLabel.appendChild(numeroPokemon);
+                // numeroPokemon.textContent = pokemon.name; //Colocar numero do pokemon
+                // containerLabel.appendChild(numeroPokemon);
 
                 // Faz uma segunda chamada à API para obter os detalhes do Pokémon
                 // Traz a imagem em movimento do pokemon, porém nem todo pokemon tem sua versão na 'geração 5'. 
@@ -80,6 +80,11 @@ function consultarAPIPoke() {
                 fetch(pokemon.url)
                     .then(response => response.json())
                     .then(pokemonData => {
+
+                        const picturePokemon = document.createElement('picture');
+                        picturePokemon.classList.add('pokemon-grid')
+                        // containerPokemon.appendChild(picturePokemon);
+
                         const imagemPokemon = document.createElement('img');
                         // buttonPokemon.onclick = alert(pokemon['name']);
                         // document.getElementById(pokemon['name']).onclick = exibe()
@@ -94,12 +99,16 @@ function consultarAPIPoke() {
                         else
                             imagemPokemon.src = pokemonData['sprites']['front_default'];
 
-                        imagemPokemon.style.width = "60px";
+                        imagemPokemon.style.height = "50px";
 
                         const buttonAlinha = document.createElement('a');
-                        buttonAlinha.appendChild(imagemPokemon);
 
-                        divPokemon.appendChild(buttonAlinha);
+                        numeroPokemon.textContent = "#" + pokemonData['order']; //Colocar numero do pokemon
+                        containerLabel.appendChild(numeroPokemon);
+                        picturePokemon.appendChild(imagemPokemon)
+                        buttonAlinha.appendChild(picturePokemon);
+
+                        containerPokemon.appendChild(buttonAlinha);
                     })
                     .catch(error => {
                         console.error('Erro ao obter detalhes do Pokémon:', error);
@@ -173,14 +182,18 @@ function exibe(pokemon) {
 
                 pokemon = request.response['abilities'];
 
-                myPara1.setAttribute('class', 'list-group-item');
-                myPara1.innerText = pokemon[0].ability.name;
+                for (let i = 0; i < pokemon.length; i++) {
+                    myPara1.innerHTML += pokemon[i].ability.name + "<br>";
+                }
 
-                myPara2.setAttribute('class', 'list-group-item');
-                myPara2.innerText = pokemon[1].ability.name;
+                // myPara1.setAttribute('class', 'list-group-item');
+                // myPara1.innerText = pokemon[0].ability.name;
+
+                // myPara2.setAttribute('class', 'list-group-item');
+                // myPara2.innerText = pokemon[1].ability.name;
 
                 myList.appendChild(myPara1);
-                myList.appendChild(myPara2);
+                // myList.appendChild(myPara2);
                 dscPokemon.appendChild(myList);
             }
 
