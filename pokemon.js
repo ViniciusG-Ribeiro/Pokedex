@@ -2,9 +2,10 @@
 var section = document.querySelector('#gridPokemons');
 
 window.onload = function () {
-    setTimeout(function () {
-        consultarAPIPoke();
-    }, 1000); // Atraso de 1 segundo
+    // setTimeout(function () {
+    //     consultarAPIPoke();
+    // }, 1000); // Atraso de 1 segundo
+    consultarAPIPoke();
 };
 
 // function consultarAPIPoke() {
@@ -66,7 +67,12 @@ function consultarAPIPoke() {
                 divPokemon.appendChild(containerLabel);
 
                 const nomePokemon = document.createElement('p');
-                nomePokemon.classList.add('nome-pokemon-grid');
+
+                if (pokemon.name.length > 12)
+                    nomePokemon.classList.add('nome-pokemon-grid-pequena');
+                else
+                    nomePokemon.classList.add('nome-pokemon-grid');
+
                 nomePokemon.textContent = pokemon.name;
                 containerLabel.appendChild(nomePokemon);
 
@@ -103,7 +109,7 @@ function consultarAPIPoke() {
 
                         const buttonAlinha = document.createElement('a');
 
-                        numeroPokemon.textContent = "#" + pokemonData['order']; //Colocar numero do pokemon
+                        numeroPokemon.textContent = "#" + pokemonData['id']; //Colocar numero do pokemon
                         containerLabel.appendChild(numeroPokemon);
                         picturePokemon.appendChild(imagemPokemon)
                         buttonAlinha.appendChild(picturePokemon);
@@ -168,7 +174,7 @@ function exibe(pokemon) {
 
                 h2nomePokemon.textContent = pokemon;
 
-                pokemon = request.response['order'];
+                pokemon = request.response['id'];
                 nrPokemon.value = pokemon;
 
                 pokemon = request.response['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
@@ -195,6 +201,7 @@ function exibe(pokemon) {
                 myList.appendChild(myPara1);
                 // myList.appendChild(myPara2);
                 dscPokemon.appendChild(myList);
+
             }
 
         }

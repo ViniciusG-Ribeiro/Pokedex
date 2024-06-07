@@ -272,6 +272,7 @@ main{
     border: solid black 0.5px;
     margin: 2px 0 auto;
     padding: 1px;
+    height: 34px;
     font-size: lamp(1rem, 2.5vw, 3rem);
 }
 
@@ -279,6 +280,13 @@ main{
     margin: auto;
     margin-bottom: 0;
     font-size: 14px;
+    font-weight: bold;
+}
+
+.nome-pokemon-grid-pequena{
+    margin: auto;
+    margin-bottom: 0;
+    font-size: 9px;
     font-weight: bold;
 }
 
