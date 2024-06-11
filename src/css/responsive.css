@@ -1,3 +1,7 @@
+/* .active-grid{
+    display: grid !important;
+} */
+
 @media(max-width:999px){
     .logo{
          width: 232px;
@@ -6,11 +10,78 @@
     .pokedex{
         width: 550px;
         background-image: url(../imgs/ViniDex-mobile.png);
+        position: relative;
     }
 
     .grid{
+        margin: 0 auto;
+        border: 3px solid rgba(255, 255, 255, 0.37);
+        background-color: #b4dff8d7;
+        border-radius: 10px;
+        display: none;
+        height: 482px;
+    }
+
+    #fechar{
         display: none;
     }
+
+    .container-direta-pokedex{
+        /* background-color: rgba(127, 255, 212, 0.322); */
+        background-color: #b4dff87a;
+        border-radius: 10px;
+        width: 440px;
+        margin: 175px 0px 0px 30px;
+        padding-top: 0px;
+        height: 533px;
+        position: absolute;
+        display: none;
+    }
+
+    *::-webkit-scrollbar-thumb {
+        border: 2px solid #ffffff;
+    }
+    *::-webkit-scrollbar-track {
+        background: #f1e9e9c7;
+        border-radius: 5px;
+    }
+
+    .container-painel .botao{
+        width: 40px;
+        top: 0px;
+        right: 0px;
+        position: absolute;
+        display: block;
+    }
+    
+    @-webkit-keyframes jump{
+        0%{-webkit-transform: scale(1);
+            transform: scale(1);} 
+        20%{-webkit-transform: scale(1.1);
+            transform: scale(1.1);}
+        40%{-webkit-transform: scale(1);
+            transform: scale(1);}
+    }
+    
+    .icon-button{
+        animation: jump 4s infinite;
+        font-size: 20px;
+    }
+
+    .container-direta-pokedex .botao{
+        display: block;
+        margin: 1px auto 2px ;
+        width: 50px;
+        height: 25px;
+        padding: 0px;
+        color: white;
+        background-color: rgb(245, 33, 33);
+    }
+
+    .frame-pokemon {
+        height: auto;
+    }
+
 }
 
 @media(max-width:549px){
@@ -75,7 +146,6 @@
         border-top: 10px solid transparent;
         border-bottom: 10px solid transparent;
         border-left: 10px solid black;
-    
         right: -14px;
         top: 71.5px;
     }
@@ -148,4 +218,45 @@
         border: 2.5px solid #ffffff;
     }
     
+    .pokemon-grid img{
+        height: 35px;
+        width: 35px;
+    }
+
+    .frame-pokemon {
+        height: auto;
+    }
+
+    .container-direta-pokedex{
+        /* background-color: rgba(127, 255, 212, 0.322); */
+        background-color: #b4dff87a;
+        width: 290px;
+        padding-top: 0px;
+        height: 355px;
+        position: absolute;
+        margin: 115px 0px 0px 20px;
+        /* display: none; */
+    }
+
+    .grid{
+        height: 302px;
+        width: 265px;
+        /* display: none; */
+    }
+
+    .container-painel .botao{
+        width: 25px;
+        height: 25px;
+    }
+
+    .icon-button{
+        animation: jump 3s infinite;
+        font-size: 15px;
+    }
+
+    .pokemon img{
+        height: 80px;
+        width: 80px;
+    }
+
 }

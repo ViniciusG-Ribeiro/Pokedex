@@ -1,20 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;500;700&display=swap');
 
 body{
-    /* background-color: aqua; */
     align-items: center;
     background: url(../imgs/background.jpg) no-repeat center;
     background-size: cover;
+    height: 100vh;
 }
 
 header{
     display: flex;
     justify-content: center;
-    margin-bottom: 5px;
 }
 
 .logo{
-    width: 400px;
+    width: 380px;
     padding: 5px;
 }
 
@@ -83,6 +82,7 @@ main{
     width: 390px;
     height: 319px;
     margin: 65px 55px 0;
+    position: relative;
     /* background-color: rgba(128, 0, 128, 0.541);  */
 }
 
@@ -131,6 +131,7 @@ main{
     background-color: rgba(252, 252, 252, 0.822);
     border: solid black 1px;
     border-radius: 5px;
+    text-transform: capitalize;
 }
 
 .pokemon{
@@ -140,7 +141,8 @@ main{
 .pokemon img{
     margin-top: 15px;
     /* width: 150px; */
-    width: 150px;
+    height: 150px;
+    
 }
 
 .container-tipo{
@@ -155,6 +157,10 @@ main{
     margin-left: 15px;
     border: 2px solid black;
     border-radius: 50%;
+}
+
+.container-painel .botao, .container-direta-pokedex .botao{
+    display: none;
 }
 
 .container-inf-status{
@@ -203,12 +209,14 @@ main{
     text-align: justify;
     font-family: 'Roboto Slab', serif;
     font-size: 14px;
+    display: none;
 }
+
 /* criado separados os estilos por que provavelmente vão ter conteudos com outros estilos  */
 .status{
     margin: 5px 10px 0px 10px;
     overflow-y: scroll;
-    max-height: 130px;
+    height: 130px;
     border: 1px solid black;
     border-radius: 5px;
     background-color: white;
@@ -217,6 +225,10 @@ main{
     font-family: 'Roboto Slab', serif;
     font-size: 14px;
     display: none; /*<- Remover para aparecer o status*/
+}
+
+.active-button{
+    display: block;
 }
 
 .container-direta-pokedex{
@@ -255,12 +267,10 @@ main{
 }
 
 .frame-pokemon:hover{
-    /* background-color: rgb(116, 114, 114); */
     background-color: rgb(255, 255, 255);
 }
 
 .container-pokemon{
-
     background: rgb(252,12,12);
     background: linear-gradient(180deg, rgba(252,12,12,1) 46%, rgba(0,0,0,1) 51%, rgba(255,255,255,1) 55%);
     background-size: cover;
@@ -280,12 +290,22 @@ main{
     border: solid black 0.5px;
     margin: 2px 0 auto;
     padding: 1px;
+    height: 34px;
+    font-size: lamp(1rem, 2.5vw, 3rem);
 }
 
 .nome-pokemon-grid{
     margin: auto;
     margin-bottom: 0;
     font-size: 14px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.nome-pokemon-grid-pequena{
+    margin: auto;
+    margin-bottom: 0;
+    font-size: 9px;
     font-weight: bold;
 }
 

@@ -2,10 +2,56 @@
 var section = document.querySelector('#gridPokemons');
 
 window.onload = function () {
-    setTimeout(function () {
-        consultarAPIPoke();
-    }, 1000); // Atraso de 3 segundo
+    // setTimeout(function () {
+    //     consultarAPIPoke();
+    // }, 1000); // Atraso de 1 segundo
+    consultarAPIPoke();
+
+    //alteração do icone de grid para mobile e telas menores
+    var larguraDaTela = window.innerWidth;
+    const iconGrid = document.getElementById('icon-grid');
+    if (larguraDaTela <= 549) {
+        iconGrid.classList.add("fa-grip-vertical");
+        iconGrid.classList.remove("fa-grip")
+    } else {
+        iconGrid.classList.add("fa-grip");
+        iconGrid.classList.remove("fa-grip-vertical");
+    }
 };
+
+/* Adicionado para exibir conteudos referentes aos botões information e status */
+const statusButton = document.getElementById('status');
+const informationButton = document.getElementById('info');
+const containerStatus = document.querySelector('.status');
+const containerinfo = document.querySelector('.informacoes');
+
+statusButton.addEventListener("click",()=>{
+    containerinfo.classList.remove('active-button');
+    containerStatus.classList.add('active-button');
+})
+
+informationButton.addEventListener("click",()=>{
+    containerStatus.classList.remove('active-button');
+    containerinfo.classList.add('active-button');
+})
+
+/*grind para telas menores */
+const showGridButton = document.querySelector('.show-grid');
+const closeButton=document.getElementById('fechar');
+const showGrid = document.querySelector('.grid');
+const backgroundGrid = document.querySelector('.container-direta-pokedex');
+
+showGridButton.addEventListener("click",()=>{
+    closeButton.style.display='block'
+    showGrid.style.display='grid'
+    backgroundGrid.style.display='block'
+})
+
+closeButton.addEventListener('click',()=>{
+    closeButton.style.display='none'
+    showGrid.style.display='none'
+    backgroundGrid.style.display='none' 
+})
 
 // function consultarAPIPoke() {
 //     const apiUrl = "https://pokeapi.co/api/v2/pokemon?limit=1000&offset=0";
@@ -15,11 +61,11 @@ window.onload = function () {
 //         .then(response => response.json())
 //         .then(data => {
 //             const pokemons = data.results;
-            
+
 //             pokemons.forEach(pokemon => {
 //                 const divPokemon = document.createElement('div');
 //                 divPokemon.classList.add('pokemon-card'); // Adicionar classes CSS para estilizar as divs conforme desejar.
-                
+
 //                 const nomePokemon = document.createElement('h2');
 //                 nomePokemon.textContent = pokemon.name;
 //                 divPokemon.appendChild(nomePokemon);
@@ -35,55 +81,105 @@ window.onload = function () {
 //Função que carrega varios cards de pokemons ao entrar no index
 function consultarAPIPoke() {
     const apiUrl = "https://pokeapi.co/api/v2/pokemon?limit=1000&offset=0";
-    
+
     fetch(apiUrl)
         .then(response => response.json())
         .then(data => {
             const pokemons = data.results;
-            
+
             pokemons.forEach(pokemon => {
+                const buttonPokemon = document.createElement('a');
+                buttonPokemon.setAttribute("onclick", "exibe('" + pokemon.name + "')");
+
                 const divPokemon = document.createElement('div');
-                divPokemon.classList.add('frame-pokemon display-flex'); // Você pode adicionar classes CSS para estilizar as divs conforme desejar.
+                divPokemon.classList.add('frame-pokemon');
+                divPokemon.classList.add('display-flex');
 
                 const containerPokemon = document.createElement('div');
                 containerPokemon.classList.add('container-pokemon')
                 divPokemon.appendChild(containerPokemon);
 
-                const picturePokemon = document.createElement('picture');
-                picturePokemon.classList.add('pokemon-grid')
-                containerPokemon.appendChild(picturePokemon);
+                // const picturePokemon = document.createElement('picture');
+                // picturePokemon.classList.add('pokemon-grid')
+                // containerPokemon.appendChild(picturePokemon);
 
-                const imgPokemon = document.createElement('img');
-                imgPokemon.classList.add('gif')
-                picturePokemon.appendChild(imgPokemon);
+                // const imgPokemon = document.createElement('img');
+                // imgPokemon.classList.add('gif')
+                // picturePokemon.appendChild(imgPokemon);
 
                 const containerLabel = document.createElement('div');
-                containerLabel.classList.add('container-label')
+                containerLabel.classList.add('container-label');
                 divPokemon.appendChild(containerLabel);
 
                 const nomePokemon = document.createElement('p');
-                nomePokemon.classList.add('nome-pokemon-grid')
+
+                if (pokemon.name.length > 12)
+                    nomePokemon.classList.add('nome-pokemon-grid-pequena');
+                else
+                    nomePokemon.classList.add('nome-pokemon-grid');
+
                 nomePokemon.textContent = pokemon.name;
                 containerLabel.appendChild(nomePokemon);
 
                 const numeroPokemon = document.createElement('span');
-                //numeroPokemon.textContent = pokemon.name;             Colocar numero do pokemon
-                containerLabel.appendChild(numeroPokemon);
-                
+                // numeroPokemon.textContent = pokemon.name; //Colocar numero do pokemon
+                // containerLabel.appendChild(numeroPokemon);
 
                 // Faz uma segunda chamada à API para obter os detalhes do Pokémon
+                // Traz a imagem em movimento do pokemon, porém nem todo pokemon tem sua versão na 'geração 5'. 
+                // Portanto, muitos ficarão sem imagem. O correto seria colocar uma condição, que caso venha null a imagem, ele busque nos outros 'nós' do json (generation-vi, generation-vii, etc)
                 fetch(pokemon.url)
                     .then(response => response.json())
                     .then(pokemonData => {
+
+                        const picturePokemon = document.createElement('picture');
+                        picturePokemon.classList.add('pokemon-grid')
+                        // containerPokemon.appendChild(picturePokemon);
+
                         const imagemPokemon = document.createElement('img');
-                        imagemPokemon.src = pokemonData.sprites.front_default;
-                        divPokemon.appendChild(imagemPokemon);
+                        // buttonPokemon.onclick = alert(pokemon['name']);
+                        // document.getElementById(pokemon['name']).onclick = exibe()
+                        // buttonPokemon.id = pokemon['name'];
+
+                        // Acessando a propriedade usando notação de colchetes
+                        const img = pokemonData['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
+
+                        // se não existir imagem animada do pokemon ele retorna a padrão estática
+                        if (img != null)
+                            imagemPokemon.src = img;
+                        else
+                            imagemPokemon.src = pokemonData['sprites']['front_default'];
+
+                         imagemPokemon.style.height = "50px";
+
+                        const buttonAlinha = document.createElement('a');
+
+                        numeroPokemon.textContent = "#" + pokemonData['id']; //Colocar numero do pokemon
+                        containerLabel.appendChild(numeroPokemon);
+                        picturePokemon.appendChild(imagemPokemon)
+                        buttonAlinha.appendChild(picturePokemon);
+
+                        containerPokemon.appendChild(buttonAlinha);
                     })
                     .catch(error => {
                         console.error('Erro ao obter detalhes do Pokémon:', error);
                     });
+                // Faz uma segunda chamada à API para obter os detalhes do Pokémon
+                // Traz a imagem estática do pokemon
+                // fetch(pokemon.url)
+                //     .then(response => response.json())
+                //     .then(pokemonData => {
+                //         const imagemPokemon = document.createElement('img');
+                //         // imagemPokemon.src = pokemonData.sprites.front_default;
+                //         imagemPokemon.src = pokemonData.sprites.versions.'generation-v'.animated;
+                //         divPokemon.appendChild(imagemPokemon);
+                //     })
+                //     .catch(error => {
+                //         console.error('Erro ao obter detalhes do Pokémon:', error);
+                //     });
 
-                section.appendChild(divPokemon);
+                buttonPokemon.appendChild(divPokemon);
+                section.appendChild(buttonPokemon);
             });
         })
         .catch(error => {
@@ -91,11 +187,75 @@ function consultarAPIPoke() {
         });
 }
 
+// const fetchPokemon = async (pokemon) => {
+//     const APIResponse = await fetch(``);
+// }
 
 //Função que é chamada quando o botão "busca pokemon" é pressionado
 function exibe() {
     var pokemon = document.querySelector('#txtBusca').value
     API('https://pokeapi.co/api/v2/pokemon/' + pokemon)
+}
+
+function exibe(pokemon) {
+    var request = new XMLHttpRequest();
+    var requestURL = 'https://pokeapi.co/api/v2/pokemon/' + pokemon;
+
+    request.onreadystatechange = function (e) {
+        if (request.readyState === 4) {
+            if (request.status === 200) {
+                var pokemon = request.response['name'];
+
+                const imgPokemon = document.getElementById('imgPokemon');
+                const h2nomePokemon = document.getElementById('h2nomePokemon');
+                const nrPokemon = document.getElementById('nrPokemon');
+                const dscPokemon = document.getElementById('dscPokemon');
+                dscPokemon.innerText = "";
+
+                const myH4 = document.createElement('h4');
+                const myPara1 = document.createElement('li');
+                const myPara2 = document.createElement('h4');
+                const myList = document.createElement('ul');
+
+                h2nomePokemon.textContent = pokemon;
+
+                pokemon = request.response['id'];
+                nrPokemon.value = pokemon;
+
+                pokemon = request.response['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
+                if (pokemon == null)
+                    pokemon = request.response['sprites']['front_default'];
+
+                imgPokemon.setAttribute('src', pokemon);
+
+                myH4.textContent = "Habilidades:";
+                dscPokemon.appendChild(myH4);
+
+                pokemon = request.response['abilities'];
+
+                for (let i = 0; i < pokemon.length; i++) {
+                    myPara1.innerHTML += pokemon[i].ability.name + "<br>";
+                }
+
+                // myPara1.setAttribute('class', 'list-group-item');
+                // myPara1.innerText = pokemon[0].ability.name;
+
+                // myPara2.setAttribute('class', 'list-group-item');
+                // myPara2.innerText = pokemon[1].ability.name;
+
+                myList.appendChild(myPara1);
+                // myList.appendChild(myPara2);
+                dscPokemon.appendChild(myList);
+
+            }
+
+        }
+    }
+
+    request.open('GET', requestURL);
+    request.responseType = 'json';
+    request.send();
+
 }
 
 function API(url) {
@@ -127,7 +287,7 @@ function API(url) {
                 myCol.setAttribute('class', 'col-md-3');
                 myDiv.setAttribute('class', 'card');
                 myDiv.setAttribute('style', 'margin: 10px; padding-left: 0px;');
-                
+
                 myH2.textContent = pokemon[0].name;
                 pokemon = request.response['sprites'];
                 myImg.setAttribute('src', pokemon.front_default);
@@ -139,7 +299,7 @@ function API(url) {
 
                 myPara2.setAttribute('class', 'list-group-item');
                 myPara2.innerText = pokemon[1].ability.name;
-                
+
                 // myPara3.setAttribute('class', 'list-group-item');
                 myImg.setAttribute('class', 'card-img-top')
 

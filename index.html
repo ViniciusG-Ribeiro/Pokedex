@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="src/css/reset.css">
     <link rel="stylesheet" href="src/css/scrollbar.css">
     <link rel="stylesheet" href="src/css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -22,19 +23,23 @@
     <main class="display-flex">
         <div class="pokedex">
             <!-- 1000 x 755 -->
-            <div class="container-esquerda-pokedex display-flex">
+            <div id="pokemonSelecionado" class="container-esquerda-pokedex display-flex">
                 <div class="container-consulta">
                     <div class="consulta display-flex">
                         <p>N° #</p>
-                        <input id="txtBusca" class="input-codigo" type="number" name="codigo" value="0">
+                        <input id="nrPokemon" class="input-codigo" type="number" name="codigo" value="0">
                     </div>
                 </div>
-        
+
                 <div class="container-painel">
                     <div class="painel display-flex">
-                        <h2 class="nome-pokemon display-flex">Nome pokemon</h2>
+                        <h2 id="h2nomePokemon" class="nome-pokemon display-flex">
+                            charizard
+                        </h2>
                         <picture class="pokemon display-flex">
-                           <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/6.gif" alt="charmander" class="gif">
+                            <img id="imgPokemon"
+                                src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/6.gif"
+                                alt="charmander" class="gif">
                         </picture>
 
                         <a id="anterior" class="setas-painel seta-esquerda"></a>
@@ -43,25 +48,30 @@
 
                     <div class="container-tipo display-flex">
                         <p class="tipo-pokemon">
-                            <img  src="src/imgs/favcon.png" alt="Tipo 1">
+                            <img src="src/imgs/favcon.png" alt="Tipo 1">
                         </p>
-                        <p class="tipo-pokemon"> 
-                            <img  src="src/imgs/favcon.png" alt="Tipo 2">
+                        <p class="tipo-pokemon">
+                            <img src="src/imgs/favcon.png" alt="Tipo 2">
                         </p>
                     </div>
+                    
+                    <!-- botão para grid do pokemon em telas menores e mobile-->
+                    <button class="botao show-grid"><i id="icon-grid" class="fa-solid fa-grip icon-button"></i></button>
+
+                    <!-- botão para grid do pokemon em telas menores -->
+                    <!-- <button  id="small-window" class="botao show-grid"><i class="fa-solid fa-grip icon-button"></i></button> -->
+                    
+                    <!-- botão para grid pokemons em mobile -->
+                    <!-- <button id="mobile" class="botao show-grid"><i class="fa-solid fa-grip-vertical icon-button"></i></button> -->
                 </div>
- 
+
                 <div class="container-inf-status">
                     <nav class="display-flex">
                         <input id="info" class="botao" type="button" value="Information">
                         <input id="status" class="botao" type="button" value="Status">
                     </nav>
                     <div class="descricao">
-                        <div class="informacoes">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.  Cum placeat    atque consequuntur asperiores similique  numquam ducimus porro excepturi    corporis voluptatibus  distinctio voluptatum illum fugiat impedit, quaerat   magni et. Quae, ex!
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.  Totam, possimus illum. Aspernatur culpa blanditiis  itaque consequatur voluptatibus nesciunt tempore  incidunt cupiditate, alias, perferendis, a dolores  debitis similique inventore eligendi esse.
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.  Libero consequatur inventore necessitatibus fuga nostrum  optio quae soluta quis quas ducimus dolores, accusantium  eaque vero in eligendi numquam atque quibusdam fugit?
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.  Doloribus quis ab deserunt fugit quisquam, omnis est  dolores velit odit distinctio natus saepe. Dignissimos  illum aliquid dolores nobis possimus culpa reprehenderit.
+                        <div id="dscPokemon" class="informacoes active-button">
                         </div>
                         <div class="status">
                         ----------------------Status-----------------------
@@ -71,164 +81,11 @@
                 </div>
             </div>
             <div class="container-direta-pokedex">
-                <div class="grid">
-                    <div class="frame-pokemon display-flex">
-                        <div class="container-pokemon">
-                            <picture class="pokemon-grid">
-                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/1.gif" alt="charmander" class="gif">
-                            </picture>
-                        </div>
-                        <div class="container-label">
-                            <p class="nome-pokemon-grid">Pokemon</p>
-                            <span>#001</span>
-                        </div>
-                    </div>
-
-                    <div class="frame-pokemon display-flex">
-                        <div class="container-pokemon">
-                            <picture class="pokemon-grid">
-                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/1.gif" alt="charmander" class="gif">
-                            </picture>
-                        </div>
-                        <div class="container-label">
-                            <p class="nome-pokemon-grid">Pokemon</p>
-                            <span>#001</span>
-                        </div>
-                    </div>
-
-                    <div class="frame-pokemon display-flex">
-                        <div class="container-pokemon">
-                            <picture class="pokemon-grid">
-                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/1.gif" alt="charmander" class="gif">
-                            </picture>
-                        </div>
-                        <div class="container-label">
-                            <p class="nome-pokemon-grid">Pokemon</p>
-                            <span>#001</span>
-                        </div>
-                    </div>
-
-                    <div class="frame-pokemon display-flex">
-                        <div class="container-pokemon">
-                            <picture class="pokemon-grid">
-                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/1.gif" alt="charmander" class="gif">
-                            </picture>
-                        </div>
-                        <div class="container-label">
-                            <p class="nome-pokemon-grid">Pokemon</p>
-                            <span>#001</span>
-                        </div>
-                    </div>
-
-                    <div class="frame-pokemon display-flex">
-                        <div class="container-pokemon">
-                            <picture class="pokemon-grid">
-                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/1.gif" alt="charmander" class="gif">
-                            </picture>
-                        </div>
-                        <div class="container-label">
-                            <p class="nome-pokemon-grid">Pokemon</p>
-                            <span>#001</span>
-                        </div>
-                    </div>
-
-                    <div class="frame-pokemon display-flex">
-                        <div class="container-pokemon">
-                            <picture class="pokemon-grid">
-                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/1.gif" alt="charmander" class="gif">
-                            </picture>
-                        </div>
-                        <div class="container-label">
-                            <p class="nome-pokemon-grid">Pokemon</p>
-                            <span>#001</span>
-                        </div>
+                <div>
+                    <input id="fechar" class="botao fechar" type="button" value="X">
+                    <section id="gridPokemons" class="grid">
                         
-                    </div>
-
-                    <div class="frame-pokemon display-flex">
-                        <div class="container-pokemon">
-                            <picture class="pokemon-grid">
-                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/1.gif" alt="charmander" class="gif">
-                            </picture>
-                        </div>
-                        <div class="container-label">
-                            <p class="nome-pokemon-grid">Pokemon</p>
-                            <span>#001</span>
-                        </div>
-                        
-                    </div>
-
-                    <div class="frame-pokemon display-flex">
-                        <div class="container-pokemon">
-                            <picture class="pokemon-grid">
-                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/1.gif" alt="charmander" class="gif">
-                            </picture>
-                        </div>
-                        <div class="container-label">
-                            <p class="nome-pokemon-grid">Pokemon</p>
-                            <span>#001</span>
-                        </div>
-                        
-                    </div>
-
-                    <div class="frame-pokemon display-flex">
-                        <div class="container-pokemon">
-                            <picture class="pokemon-grid">
-                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/1.gif" alt="charmander" class="gif">
-                            </picture>
-                        </div>
-                        <div class="container-label">
-                            <p class="nome-pokemon-grid">Pokemon</p>
-                            <span>#001</span>
-                        </div>
-                        
-                    </div>
-
-                    <div class="frame-pokemon display-flex">
-                        <div class="container-pokemon">
-                            <picture class="pokemon-grid">
-                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/1.gif" alt="charmander" class="gif">
-                            </picture>
-                        </div>
-                        <div class="container-label">
-                            <p class="nome-pokemon-grid">Pokemon</p>
-                            <span>#001</span>
-                        </div>
-                        
-                    </div>
-
-                    <div class="frame-pokemon display-flex">
-                        <div class="container-pokemon">
-                            <picture class="pokemon-grid">
-                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/1.gif" alt="charmander" class="gif">
-                            </picture>
-                        </div>
-                        <div class="container-label">
-                            <p class="nome-pokemon-grid">Pokemon</p>
-                            <span>#001</span>
-                        </div>
-                        
-                    </div>
-
-                    <div class="frame-pokemon display-flex">
-                        <div class="container-pokemon">
-                            <picture class="pokemon-grid">
-                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/1.gif" alt="charmander" class="gif">
-                            </picture>
-                        </div>
-                        <div class="container-label">
-                            <p class="nome-pokemon-grid">Pokemon</p>
-                            <span>#001</span>
-                        </div>
-                        
-                    </div>
-
-                    <!-- JS
-                        <div style="padding: 20px">
-                        <section id="gridPokemons">
-                        </section>
-                    </div> -->
-
+                    </section>
                 </div>
 
             </div>
@@ -238,14 +95,14 @@
         <!-- <input id="txtBusca" class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar"
             style="width: 230px">
         <input type="button" class="btn btn-outline-success" value="Pesquisar" onclick="exibe()"> -->
-       
-        
+
+
         <!-- <br><br>
         <div style="padding: 20px">
             <section id="gridPokemons">
             </section>
         </div> -->
-        
+
     </main>
 
     <script src="./pokemon.js" type="text/javascript"></script>
@@ -270,6 +127,8 @@
             }
         });  
     </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js" integrity="sha512-u3fPA7V8qQmhBPNT5quvaXVa1mnnLSXUep5PS1qo5NRzHwG19aHmNJnj1Q8hpA/nBWZtZD4r4AX6YOt5ynLN2g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 </body>
 
