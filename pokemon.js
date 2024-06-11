@@ -6,7 +6,52 @@ window.onload = function () {
     //     consultarAPIPoke();
     // }, 1000); // Atraso de 1 segundo
     consultarAPIPoke();
+
+    //alteração do icone de grid para mobile e telas menores
+    var larguraDaTela = window.innerWidth;
+    const iconGrid = document.getElementById('icon-grid');
+    if (larguraDaTela <= 549) {
+        iconGrid.classList.add("fa-grip-vertical");
+        iconGrid.classList.remove("fa-grip")
+    } else {
+        iconGrid.classList.add("fa-grip");
+        iconGrid.classList.remove("fa-grip-vertical");
+    }
 };
+
+/* Adicionado para exibir conteudos referentes aos botões information e status */
+const statusButton = document.getElementById('status');
+const informationButton = document.getElementById('info');
+const containerStatus = document.querySelector('.status');
+const containerinfo = document.querySelector('.informacoes');
+
+statusButton.addEventListener("click",()=>{
+    containerinfo.classList.remove('active-button');
+    containerStatus.classList.add('active-button');
+})
+
+informationButton.addEventListener("click",()=>{
+    containerStatus.classList.remove('active-button');
+    containerinfo.classList.add('active-button');
+})
+
+/*grind para telas menores */
+const showGridButton = document.querySelector('.show-grid');
+const closeButton=document.getElementById('fechar');
+const showGrid = document.querySelector('.grid');
+const backgroundGrid = document.querySelector('.container-direta-pokedex');
+
+showGridButton.addEventListener("click",()=>{
+    closeButton.style.display='block'
+    showGrid.style.display='grid'
+    backgroundGrid.style.display='block'
+})
+
+closeButton.addEventListener('click',()=>{
+    closeButton.style.display='none'
+    showGrid.style.display='none'
+    backgroundGrid.style.display='none' 
+})
 
 // function consultarAPIPoke() {
 //     const apiUrl = "https://pokeapi.co/api/v2/pokemon?limit=1000&offset=0";
@@ -105,7 +150,7 @@ function consultarAPIPoke() {
                         else
                             imagemPokemon.src = pokemonData['sprites']['front_default'];
 
-                        imagemPokemon.style.height = "50px";
+                         imagemPokemon.style.height = "50px";
 
                         const buttonAlinha = document.createElement('a');
 
