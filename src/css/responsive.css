@@ -254,4 +254,9 @@
         font-size: 15px;
     }
 
+    .pokemon img{
+        height: 80px;
+        width: 80px;
+    }
+
 }
